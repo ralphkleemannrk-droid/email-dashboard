@@ -1,0 +1,14 @@
+{
+  "name": "email-stats-dashboard",
+  "version": "1.0.0",
+  "description": "Email statistics dashboard with Netlify Functions",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo "Error: no test specified" && exit 1"
+  },
+  "author": "Gemini",
+  "license": "ISC",
+  "dependencies": {
+    "imapflow": "^1.0.155"
+  }
+}
