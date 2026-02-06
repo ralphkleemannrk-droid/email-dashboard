@@ -23,7 +23,6 @@
         .no-blur {
             filter: blur(0px);
         }
-        /* Chart.js Doughnut Text */
         .chart-container {
             position: relative;
         }
@@ -41,7 +40,6 @@
 
     <div id="app" class="container mx-auto p-4 md:p-8">
 
-        <!-- Header -->
         <header class="flex flex-wrap items-center justify-between mb-8">
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white" data-lang-key="dashboard_title">E-Mail Statistik</h1>
             <div class="flex items-center space-x-4 mt-4 md:mt-0">
@@ -51,12 +49,14 @@
                     <option value="en">English</option>
                 </select>
                 <button id="settings-button" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.7 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                 </button>
             </div>
         </header>
 
-        <!-- Gauges -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
                 <h2 class="text-xl font-semibold mb-4" data-lang-key="gauge_today">Heute</h2>
@@ -72,7 +72,6 @@
             </div>
         </div>
 
-        <!-- Widgets -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
                 <h3 class="text-lg font-semibold mb-2" data-lang-key="widget_noise">Noise-to-Signal Ratio</h3>
@@ -99,15 +98,13 @@
 
     </div>
 
-    <!-- Settings Modal -->
     <div id="settings-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center z-50">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-2xl">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold" data-lang-key="settings_title">Einstellungen</h2>
-                <button id="close-modal-button" class="p-2">&times;</button>
+                <button id="close-modal-button" class="p-2 text-2xl">&times;</button>
             </div>
 
-            <!-- Account Management -->
             <div class="mb-6">
                 <h3 class="text-lg font-semibold mb-2" data-lang-key="settings_accounts_title">IMAP-Konten</h3>
                 <div class="flex items-center space-x-2 mb-4">
@@ -128,7 +125,6 @@
                 </form>
             </div>
 
-            <!-- Whitelist / Blacklist -->
             <div class="mb-6">
                 <h3 class="text-lg font-semibold mb-2" data-lang-key="settings_lists_title">Whitelist / Blacklist</h3>
                 <div class="grid grid-cols-2 gap-4">
@@ -143,7 +139,6 @@
                 </div>
             </div>
 
-            <!-- Privacy -->
             <div>
                 <h3 class="text-lg font-semibold mb-2" data-lang-key="settings_privacy_title">Datenschutz</h3>
                 <div class="flex items-center justify-between">
@@ -156,289 +151,7 @@
             </div>
         </div>
     </div>
-    
-    <    <script>
-              document.addEventListener('DOMContentLoaded', () => {
-                  dayjs.extend(window.dayjs_plugin_customParseFormat);
-     
-                  const translations = {
-                      de: {
-                          dashboard_title: "E-Mail Statistik", gauge_today: "Heute", gauge_month:
-       "Dieser Monat", gauge_year: "Dieses Jahr", widget_noise: "Noise-to-Signal Ratio",
-       widget_noise_desc: "Newsletter vs. Wichtig", widget_sentiment: "Sentiment-Score",
-       widget_sentiment_desc: "Platzhalter", widget_processing: "Est. Processing Time",
-       widget_processing_desc: "Basierend auf wichtigen E-Mails", settings_title: "Einstellungen",
-       settings_accounts_title: "IMAP-Konten", settings_accounts_load: "Laden",
-       settings_accounts_delete: "Löschen", settings_accounts_save: "Konto speichern & Abrufen",
-       settings_lists_title: "Whitelist / Blacklist", settings_lists_whitelist: "Whitelist (eine
-       Domain/E-Mail pro Zeile)", settings_lists_blacklist: "Blacklist (eine Domain/E-Mail pro Zeile)"
-       settings_privacy_title: "Datenschutz", settings_privacy_mode: "Privacy Mode (Sensible Daten
-       ausblenden)", alert_loading: "Lade E-Mail-Daten...", alert_error: "Fehler beim Abrufen der Date
-       ", alert_saved: "Kontodaten gespeichert.", alert_loaded: "Konto geladen.", alert_deleted: "Kont
-       gelöscht.", alert_no_account: "Kein Konto zum Laden ausgewählt.",
-                      },
-                      en: {
-                         dashboard_title: "Email Statistics", gauge_today: "Today", gauge_month: "Th
-       Month", gauge_year: "This Year", widget_noise: "Noise-to-Signal Ratio", widget_noise_desc:
-       "Newsletter vs. Important", widget_sentiment: "Sentiment Score", widget_sentiment_desc:
-       "Placeholder", widget_processing: "Est. Processing Time", widget_processing_desc: "Based on
-       important emails", settings_title: "Settings", settings_accounts_title: "IMAP Accounts",
-       settings_accounts_load: "Load", settings_accounts_delete: "Delete", settings_accounts_save: "Sa
-       Account & Fetch", settings_lists_title: "Whitelist / Blacklist", settings_lists_whitelist:
-       "Whitelist (one domain/email per line)", settings_lists_blacklist: "Blacklist (one domain/email
-       per line)", settings_privacy_title: "Privacy", settings_privacy_mode: "Privacy Mode (Blur
-       sensitive data)", alert_loading: "Loading email data...", alert_error: "Error fetching data: ",
-       alert_saved: "Account data saved.", alert_loaded: "Account loaded.", alert_deleted: "Account
-       deleted.", alert_no_account: "No account selected to load.",
-                     }
-                 };
-    
-                 const langSwitcher = document.getElementById('language-switcher');
-                 const setLanguage = (lang) => {
-                     document.documentElement.lang = lang;
-                     document.querySelectorAll('[data-lang-key]').forEach(el => {
-                         const key = el.getAttribute('data-lang-key');
-                         if (translations[lang] && translations[lang][key]) {
-                             el.textContent = translations[lang][key];
-                         }
-                     });
-                     localStorage.setItem('dashboard-lang', lang);
-                 };
-                 langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-    
-                 const charts = {};
-                 const createGauge = (id, label) => {
-                     const container = document.getElementById(id);
-                     container.innerHTML = '<canvas></canvas><div class="chart-text"><span
-       class="text-3xl font-bold data-field privacy-blur">0</span></div>';
-                     const canvas = container.querySelector('canvas');
-                     const ctx = canvas.getContext('2d');
-                     charts[id] = new Chart(ctx, {
-                         type: 'doughnut',
-                         data: { datasets: [{ data: [0, 100], backgroundColor: ['#3b82f6', '#e5e7eb'
-       borderWidth: 0, }] },
-                         options: { responsive: true, maintainAspectRatio: false, cutout: '70%',
-       circumference: 180, rotation: -90, plugins: { tooltip: { enabled: false }, legend: { display:
-       false } }, }
-                     });
-                 };
-    
-                 const updateGauge = (id, value, max = 1000) => {
-                     const chart = charts[id];
-                     const textEl = document.getElementById(id).querySelector('.chart-text span');
-                     if (chart && textEl) {
-                         const percentage = Math.min((value / max) * 100, 100);
-                         chart.data.datasets[0].data[0] = percentage;
-                         chart.data.datasets[0].data[1] = 100 - percentage;
-                         chart.update('none');
-                         textEl.textContent = value;
-                     }
-                 };
-    
-                 const datePicker = document.getElementById('date-picker');
-                 const settingsButton = document.getElementById('settings-button');
-                 const settingsModal = document.getElementById('settings-modal');
-                 const closeModalButton = document.getElementById('close-modal-button');
-                 const privacyToggle = document.getElementById('privacy-toggle');
-                 const imapForm = document.getElementById('imap-form');
-                 const hostInput = document.getElementById('imap-host');
-                 const portInput = document.getElementById('imap-port');
-                 const userInput = document.getElementById('imap-user');
-                 const passwordInput = document.getElementById('imap-password');
-                 const accountSelector = document.getElementById('account-selector');
-                 const loadAccountBtn = document.getElementById('load-account-button');
-                 const deleteAccountBtn = document.getElementById('delete-account-button');
-                 const whitelistText = document.getElementById('whitelist');
-                 const blacklistText = document.getElementById('blacklist');
-    
-                 const showSkeleton = (isLoading) => {
-                     document.querySelectorAll('.data-field').forEach(el => {
-                         if (isLoading) {
-                             el.classList.add('skeleton');
-                             el.innerHTML = '<span class="opacity-0">...</span>';
-                         } else {
-                             el.classList.remove('skeleton');
-                         }
-                     });
-                 };
-    
-                 const setPrivacyMode = (isPrivate) => {
-                     const elements = document.querySelectorAll('.privacy-blur');
-                     elements.forEach(el => {
-                         if (isPrivate) {
-                             el.classList.remove('no-blur');
-                         } else {
-                             el.classList.add('no-blur');
-                         }
-                     });
-                     privacyToggle.checked = isPrivate;
-                     localStorage.setItem('dashboard-privacy', isPrivate);
-                 };
-    
-                 privacyToggle.addEventListener('change', (e) => setPrivacyMode(e.target.checked));
-    
-                 settingsButton.addEventListener('click', () =>
-       settingsModal.classList.remove('hidden'));
-                 closeModalButton.addEventListener('click', () =>
-       settingsModal.classList.add('hidden'));
-                 settingsModal.addEventListener('click', (e) => {
-                     if (e.target === settingsModal) {
-                         settingsModal.classList.add('hidden');
-                     }
-                });
-   
-                const getAccounts = () => JSON.parse(localStorage.getItem('imap-accounts') || '{}')
-                const saveAccounts = (accounts) => localStorage.setItem('imap-accounts',
-       JSON.stringify(accounts));
-   
-                const populateAccountSelector = () => {
-                    const accounts = getAccounts();
-                    const currentAccount = localStorage.getItem('current-account');
-                    accountSelector.innerHTML = '';
-                    Object.keys(accounts).forEach(email => {
-                        const option = document.createElement('option');
-                        option.value = email;
-                        option.textContent = email;
-                        if (email === currentAccount) {
-                            option.selected = true;
-                        }
-                        accountSelector.appendChild(option);
-                    });
-                };
-   
-                loadAccountBtn.addEventListener('click', () => {
-                    const accounts = getAccounts();
-                    const selectedEmail = accountSelector.value;
-                    if (selectedEmail && accounts[selectedEmail]) {
-                        const acc = accounts[selectedEmail];
-                        hostInput.value = acc.host;
-                        portInput.value = acc.port;
-                        userInput.value = acc.user;
-                        passwordInput.value = acc.password;
-                        whitelistText.value = acc.whitelist || '';
-                        blacklistText.value = acc.blacklist || '';
-                        localStorage.setItem('current-account', selectedEmail);
-                        alert(translations[document.documentElement.lang].alert_loaded);
-                    } else {
-                        alert(translations[document.documentElement.lang].alert_no_account);
-                    }
-                });
-   
-                deleteAccountBtn.addEventListener('click', () => {
-                    const accounts = getAccounts();
-                    const selectedEmail = accountSelector.value;
-                    if(selectedEmail && confirm(`Konto ${selectedEmail} wirklich löschen?`)) {
-                        delete accounts[selectedEmail];
-                        saveAccounts(accounts);
-                        populateAccountSelector();
-                        const currentAccount = localStorage.getItem('current-account');
-                        if (currentAccount === selectedEmail) {
-                            localStorage.removeItem('current-account');
-                            imapForm.reset();
-                        }
-                        alert(translations[document.documentElement.lang].alert_deleted);
-                    }
-                });
-   
-                const fetchData = async () => {
-                    const currentAccountEmail = localStorage.getItem('current-account');
-                    const accounts = getAccounts();
-                    if (!currentAccountEmail || !accounts[currentAccountEmail]) {
-                        settingsModal.classList.remove('hidden');
-                        return;
-                    }
-                    const account = accounts[currentAccountEmail];
-                    const body = {
-                        host: account.host, port: account.port, user: account.user, password:
-       account.password, date: datePicker.value,
-                        whitelist: (account.whitelist || '').split('\n').filter(l => l.trim() !==
-       ''),
-                        blacklist: (account.blacklist || '').split('\n').filter(l => l.trim() !==
-       ''),
-                    };
-                    showSkeleton(true);
-                    const lang = document.documentElement.lang;
-                    try {
-                        const response = await fetch('/.netlify/functions/fetch-emails', {
-                            method: 'POST', headers: { 'Content-Type': 'application/json' }, body:
-       JSON.stringify(body),
-                        });
-                        if (!response.ok) {
-                            const error = await response.json();
-                            throw new Error(error.error || `HTTP error! status: ${response.status}`
-                        }
-                        const data = await response.json();
-                        updateUI(data);
-                    } catch (error) {
-                        console.error('Fetch error:', error);
-                        alert(`${translations[lang].alert_error}${error.message}`);
-                    } finally {
-                        showSkeleton(false);
-                        setPrivacyMode(localStorage.getItem('dashboard-privacy') === 'true');
-                    }
-                };
-   
-                imapForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const accounts = getAccounts();
-                    const user = userInput.value;
-                    accounts[user] = {
-                        host: hostInput.value, port: portInput.value, user: user, password:
-       passwordInput.value,
-                        whitelist: whitelistText.value, blacklist: blacklistText.value,
-                    };
-                    saveAccounts(accounts);
-                    localStorage.setItem('current-account', user);
-                    populateAccountSelector();
-                    alert(translations[document.documentElement.lang].alert_saved);
-                    settingsModal.classList.add('hidden');
-                    fetchData();
-                });
-   
-                const updateUI = (data) => {
-                    updateGauge('gauge-today-container', data.counts.today, 100);
-                    updateGauge('gauge-month-container', data.counts.month, 1000);
-                    updateGauge('gauge-year-container', data.counts.year, 5000);
-                    const { important, newsletter } = data.categories;
-                    const noiseRatioEl = document.getElementById('noise-ratio');
-                    const sentimentScoreEl = document.getElementById('sentiment-score');
-                    const processingTimeEl = document.getElementById('processing-time');
-                    const noiseRatio = important > 0 ? (newsletter / important).toFixed(2) :
-       (newsletter > 0 ? '∞' : '0.00');
-                    noiseRatioEl.textContent = noiseRatio;
-                    sentimentScoreEl.textContent = 'N/A';
-                    const time = important * 2;
-                    processingTimeEl.textContent = `${time} min`;
-                };
-   
-                const init = () => {
-                    const savedLang = localStorage.getItem('dashboard-lang') || 'de';
-                    langSwitcher.value = savedLang;
-                    setLanguage(savedLang);
-                    datePicker.value = new Date().toISOString().split('T')[0];
-                    createGauge('gauge-today-container');
-                    createGauge('gauge-month-container');
-                    createGauge('gauge-year-container');
-                    populateAccountSelector();
-                    const currentAccount = localStorage.getItem('current-account');
-                    if (currentAccount) {
-                        loadAccountBtn.dispatchEvent(new Event('click'));
-                    }
-                    const savedPrivacy = localStorage.getItem('dashboard-privacy') === 'true';
-                    setPrivacyMode(savedPrivacy);
-                    datePicker.addEventListener('change', fetchData);
-                    if (currentAccount) {
-                        fetchData();
-                    } else {
-                        showSkeleton(false);
-                        updateUI({ counts: { today: 0, month: 0, year: 0 }, categories: { important
-       0, newsletter: 0, other: 0 }});
-                        settingsModal.classList.remove('hidden');
-                    }
-                };
-   
-                init();
-            });
-        </script>
+
+    <script src="dashboard.js" defer></script>
 </body>
 </html>
